@@ -1,6 +1,6 @@
 # 必要なライブラリをインポートする
 import streamlit as st
-# import cv2
+import cv2
 
 # 起動方法
 # > streamlit run app_calc.py
