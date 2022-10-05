@@ -1,6 +1,6 @@
 # 必要なライブラリをインポートする
 import streamlit as st
-import cv2
+# import cv2
 from PIL import Image
 import time
 
@@ -9,12 +9,12 @@ import time
 
 # Streamlitの基礎:レッスン1
 # 文字を表示する
-st.title('アプリ「AIで群衆を認識しよう」')           # タイトル
+st.header('アプリ「AIで群衆を認識しよう」')           # タイトル
 
-st.subheader('好きな難易度を選んで「認識開始」ボタンを押してね')       # サブヘッダ
+st.sidebar.subheader('難易度を選んで「認識開始」ボタンを押してください')       # サブヘッダ
 
 # level = st.radio("難易度を選択してください", ("初級の画像", "中級の画像", "上級の画像"), horizontal=True)
-level = st.radio("難易度を選択してください",("初級", "中級", "上級"), horizontal=True)
+level = st.sidebar.radio("難易度を選択してください",("初級", "中級", "上級"), horizontal=True)
 
 # st.write('レッスン1')         # キャプション
 if level == '初級':
@@ -25,7 +25,7 @@ if level == '上級':
     image = Image.open('./assets/a1-040.jpg')
 
 
-if st.button('認識開始（ここをクリック）'):
+if st.sidebar.button('認識開始（ここをクリック）'):
 
     if level == '初級':
         image = Image.open('./assets/a1-011.jpg')
@@ -52,7 +52,7 @@ if st.button('認識開始（ここをクリック）'):
     # バルーンの表示
     st.balloons()
 
-    st.success('写真から' + str(count) + '名の人間を認識しました', icon="✅")        
+    st.success('AIが 写真の中から 【' + str(count) + '人】の人間を 認識しました', icon="✅")        
 
 
 # 画像の表示
